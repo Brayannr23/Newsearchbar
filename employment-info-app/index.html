@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employment Information App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Employment Information App</h1>
+        <p class="subtitle">
+          Add your work experiences, university titles, and certifications in one
+          place.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>Add a new entry</h2>
+
+        <form id="entryForm" class="form">
+          <label class="field">
+            <span class="label">Category</span>
+            <select id="category" required>
+              <option value="Work Experience" selected>Work Experience</option>
+              <option value="University Title">University Title</option>
+              <option value="Certification">Certification</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="label">Title / Role</span>
+            <input
+              id="title"
+              type="text"
+              placeholder="e.g., Junior Developer / B.S. in Computer Science"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span class="label">Organization</span>
+            <input
+              id="organization"
+              type="text"
+              placeholder="e.g., Bethesda / University of ..."
+              required
+            />
+          </label>
+
+          <div class="row">
+            <label class="field">
+              <span class="label">Start date</span>
+              <input id="startDate" type="month" />
+            </label>
+
+            <label class="field">
+              <span class="label">End date</span>
+              <input id="endDate" type="month" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="label">Notes</span>
+            <textarea
+              id="notes"
+              rows="3"
+              placeholder="Key responsibilities, achievements, or description (optional)"
+            ></textarea>
+          </label>
+
+          <div class="row">
+            <label class="field">
+              <span class="label">Photo URL</span>
+              <input
+                id="photoUrl"
+                type="url"
+                placeholder="Link to a logo or relevant photo (optional)"
+              />
+            </label>
+
+            <label class="field">
+              <span class="label">PDF / document URL</span>
+              <input
+                id="pdfUrl"
+                type="url"
+                placeholder="Link to your CV, diploma, or contract (optional)"
+              />
+            </label>
+          </div>
+
+          <div class="actions">
+            <button id="addButton" class="primary" type="submit">
+              Add entry
+            </button>
+            <button id="clearButton" class="secondary" type="button">
+              Clear form
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="list-header">
+          <h2>Your entries</h2>
+          <p class="hint">
+            Tip: click <strong>Complete</strong> to mark an entry as done, or
+            <strong>Remove</strong> to delete it.
+          </p>
+        </div>
+
+        <ul id="entryList" class="list" aria-live="polite"></ul>
+        <p id="emptyState" class="empty">
+          No entries yet. Add your first one above.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
